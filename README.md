@@ -5,3 +5,4 @@ The websites aren't hosted so as to make you write your own code, modify it and 
 The list of all the projects is down below :
 
 1. Passenger counter app
+2. Basic Calculator app
