@@ -6,9 +6,30 @@
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-image: ;
+    background-image: url(/images/green-grass-texture-16304458.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+#message-el {
+    font-style: italic;
 }
 
 h1 {
     color: goldenrod;
+}
+
+button {
+    color: #016f32;
+    width: 150px;
+    background-color: goldenrod;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 7px 0 7px 0;
+    /*text color - #016f32 width - 150px background - goldenrod */
 }
