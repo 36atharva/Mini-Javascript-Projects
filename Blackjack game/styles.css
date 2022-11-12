@@ -31,5 +31,6 @@ button {
     text-transform: uppercase;
     font-weight: bold;
     padding: 7px 0 7px 0;
+    cursor: pointer;
     /*text color - #016f32 width - 150px background - goldenrod */
 }
