@@ -33,4 +33,5 @@ button {
     padding: 7px 0 7px 0;
     cursor: pointer;
     /*text color - #016f32 width - 150px background - goldenrod */
+    margin-top: 10px;
 }
