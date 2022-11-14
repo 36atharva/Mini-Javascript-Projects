@@ -49,3 +49,5 @@ function newCard(){
     renderGame();
 
 }
+
+
