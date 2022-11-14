@@ -1,14 +1,19 @@
-function randomIntFromInterval(min, max) { // min and max included 
-    return Math.floor(Math.random() * (max - min + 1) + min)
+let firstCard;
+let secondCard;
+let hasBlackJack = false;
+let isAlive = false;
+let sum=0;
+let arrayCards; 
+
+let player = {
+    name:"Per",
+    chips:150
 }
 
-let firstCard = 12;
-let secondCard = 5;
-let arrayCards = [firstCard, secondCard];
-let hasBlackJack = false;
-let isAlive = true;
+let playerEl = document.getElementById("player-el");
 
-let sum = firstCard + secondCard;
+playerEl.textContent = player.name + " $" + player.chips;
+
 
 let message = "";
 
@@ -17,13 +22,36 @@ let sumEl = document.getElementById("sum-el");
 let cardEl = document.querySelector("#card-el");
 
 function startGame(){
+    isAlive = true;
+    firstCard = getRandomCard();
+    secondCard = getRandomCard();
+    arrayCards = [firstCard,secondCard];
+    sum = firstCard + secondCard;
     renderGame();
 }
 
+function getRandomCard() {
+    let randomNumber = Math.floor( Math.random()*13 ) + 1
+    if (randomNumber > 10) {
+        return 10
+    } else if (randomNumber === 1) {
+        return 11
+    } else {
+        return randomNumber
+    }
+}
+
+
+
 
 function renderGame(){
-    cardEl.textContent = "Cards: " + arrayCards[0] + " " + arrayCards[1]; 
+    cardEl.textContent = "Cards: "; 
     sumEl.textContent = "Sum: " + sum;
+
+    for(let i=0; i < arrayCards.length; i++){
+        cardEl.textContent += arrayCards[i] + " ";
+    }
+
     if (sum < 21) {
         message = "Do you want to draw a new card? 🙂";
         
@@ -42,12 +70,26 @@ function renderGame(){
 }
 
 function newCard(){
-    console.log("New card drawn");
-    let cardNew = 4;
-    arrayCards.push(cardNew);
-    sum += cardNew;
-    renderGame();
+    // console.log("New card drawn");
+    player.chips -= 50;
+    if(player.chips >= 0 ){
+        if(isAlive = true && hasBlackJack == false){
+            let cardNew = getRandomCard();
+            arrayCards.push(cardNew);
+            sum += cardNew;
+            playerEl.textContent = player.name + " $" + player.chips;
+            renderGame();
+        }
+    }
+    else {
+        outOfChips();
+    }
+    
 
+}
+
+function outOfChips(){
+    playerEl.textContent = "You are out of chips!";
 }
 
 
