@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    background-color: #1F2937;
+}
+
+button {
+    margin-left: 20px;
+    background-color: lightgreen;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+#password {
+    height: 30px;
+    width: 150px;
+    background-color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: greenyellow;
+}
